@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300");
+
+body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+fieldset, img, abbr {
+  border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-weight: normal;
+  font-style: normal;
+}
+
+ul li {
+  list-style: none;
+}
+
+caption, th {
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-size: 100%;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+input, textarea, select {
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+legend {
+  color: #000;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  overflow: hidden;
+  background-color: #000;
+  color: lightblue;
+  font-family: Ubuntu;
+}
+
+.main-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+}
+
+.content {
+  position: initial !important;
+  z-index: 0;
+  overflow: hidden;
+  min-width: 100%;
+  min-height: 100%;
+  height: 100%;
+  background: url(../../dist/img/main-bg.jpg) no-repeat;
+  background-size: cover;
+  -webkit-transition: all .6s ease-in-out;
+          transition: all .6s ease-in-out;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.text h1 {
+  font-size: 45px;
+}
+
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.active {
+  -webkit-transform: perspective(1920px) rotate3d(0, 1, 0, 9deg);
+          transform: perspective(1920px) rotate3d(0, 1, 0, 9deg);
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.login-form-container {
+  position: fixed;
+  top: 0;
+  right: -308px;
+  z-index: 999;
+  min-width: 308px;
+  min-height: 100%;
+  max-width: 308px;
+  width: 100%;
+  height: 100%;
+  outline: 1px solid transparent;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, .8);
+  -webkit-transition: all .6s ease-in-out;
+          transition: all .6s ease-in-out;
+}
+
+.login-toggle {
+  right: 0;
+}
+
+.btn-open-login-form {
+  position: absolute;
+  top: 23%;
+  left: -52px;
+  display: inline-block;
+  padding: 4px 14px 8px 15px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, .8);
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.btn-open-login-form i {
+  font-size: 28px;
+  -webkit-transition: all .3s linear;
+          transition: all .3s linear;
+}
+
+.btn-open-login-form:hover i {
+  opacity: .8;
+}
+
+.login-form {
+  display: inline-block;
+  margin: 25px 0 0;
+  padding: 20px;
+  opacity: .5;
+  filter: alpha(opacity=50);
+  -webkit-transition: opacity .3s ease-in-out;
+          transition: opacity .3s ease-in-out;
+}
+
+.login-form label {
+  float: left;
+  padding: 0 0 10px;
+  width: 100%;
+  color: inherit;
+  font-size: 25px;
+  font-family: inherit;
+}
+
+.login-form input[type="text"], .login-form input[type="password"] {
+  display: block;
+  float: left;
+  margin: 0 0 10px;
+  padding: 5px 16px 5px 40px;
+  max-width: 210px;
+  width: 100%;
+  outline: none;
+  background: rgba(113, 113, 113, .6) no-repeat 14px center;
+  color: inherit;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: inherit;
+  line-height: 28px;
+}
+
+.login-form input[type="submit"] {
+  display: inline-block;
+  float: right;
+  margin: 10px 0 0;
+  padding: 5px 10px;
+  border: 2px solid #FFF;
+  background: none;
+  color: inherit;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: rgba(255, 255, 255, .7);
+  color: #222;
+}
+
+.login-form:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.login-form span {
+  position: relative;
+  display: inline-block;
+}
+
+.login-form span .fas::before {
+  position: absolute;
+  top: 29px;
+  left: 12px;
+  display: inline-block;
+  color: inherit;
+  font-size: 20px;
+}
+
+input::-webkit-input-placeholder {
+  color: #FFF;
+  text-indent: 0;
+  -webkit-transition: text-indent .3s ease;
+          transition: text-indent .3s ease;
+}
+
+input::-moz-placeholder {
+  color: #FFF;
+  text-indent: 0;
+  -webkit-transition: text-indent .3s ease;
+          transition: text-indent .3s ease;
+}
+
+input:-moz-placeholder {
+  color: #FFF;
+  text-indent: 0;
+  -webkit-transition: text-indent .3s ease;
+          transition: text-indent .3s ease;
+}
+
+input:-ms-input-placeholder {
+  color: #FFF;
+  text-indent: 0;
+  -webkit-transition: text-indent .3s ease;
+          transition: text-indent .3s ease;
+}
+
+input:focus::-webkit-input-placeholder {
+  text-indent: 500px;
+  -webkit-transition: text-indent .3s ease;
+          transition: text-indent .3s ease;
+}
+
+input:focus::-moz-placeholder {
+  text-indent: 500px;
+  -webkit-transition: text-indent .3s ease;
+          transition: text-indent .3s ease;
+}
+
+input:focus:-moz-placeholder {
+  text-indent: 500px;
+  -webkit-transition: text-indent .3s ease;
+          transition: text-indent .3s ease;
+}
+
+input:focus:-ms-input-placeholder {
+  text-indent: 500px;
+  -webkit-transition: text-indent .3s ease;
+          transition: text-indent .3s ease;
+}
+
+@media screen and (max-width: 1200px) {
+  .text h1 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .text h1 {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .text h1 {
+    font-size: 30px;
+  }
+
+  .login-form input[type="text"], .login-form input[type="password"] {
+    font-size: 15px;
+  }
+
+  .login-form input[type="submit"] {
+    font-size: 17px;
+  }
+}
