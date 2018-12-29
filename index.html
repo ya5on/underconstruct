@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="dist/css/style.css">
+
 </head>
 <body>
 
 <div class="main-container">
+    <!--<div class="preloader" style="display: none"></div>-->
     <div class="content">
         <div class="text">
             <h1>Site under construction</h1>
@@ -29,16 +31,16 @@
             <input type="text" name="log" id="log" value="" size="20"  class="input username" placeholder="login"/>
         </span>
         <span>
-            <i class="fas fa-lock"></i>
+            <i class="fas fa-lock" ></i>
             <input type="password" name="pwd" id="login_password" value="" size="20"  class="input password" placeholder="password" />
         </span>
         <input type="submit" class="button" name="submit" id="submit" value="Enter" tabindex="4" />
         <input type="hidden" name="is_custom_login" value="1" />
     </form>
     <div id="btn-open-login-form" class="btn-open-login-form">
-        <i class="fas fa-lock"></i>
+        <i class="fas fa-lock" onclick="this.className = (this.className == 'fas fa-lock' ? 'fas fa-unlock' : 'fas fa-lock')"></i>
     </div>
 
-<script src="dist/js/main.js"></script>
+    <script src="dist/js/main.js"></script>
 </body>
 </html>
