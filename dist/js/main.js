@@ -5,6 +5,15 @@ let btn = document.querySelector('.btn-open-login-form'),
 function add() {
     modal.classList.toggle('login-toggle');
     content.classList.toggle('active');
+
+    if ( document.querySelector('.btn-open-login-form i').classList.contains('fa-lock') ){
+        document.querySelector('.btn-open-login-form i').classList.remove('fa-lock');
+        document.querySelector('.btn-open-login-form i').classList.add('fa-unlock');
+    } else {
+        document.querySelector('.btn-open-login-form i').classList.remove('fa-unlock');
+        document.querySelector('.btn-open-login-form i').classList.add('fa-lock')
+    }
+
 }
 
 btn.onclick = add;
