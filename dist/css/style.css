@@ -124,7 +124,7 @@ body {
   position: fixed;
   top: 0;
   right: -308px;
-  z-index: 999;
+  z-index: 20;
   min-width: 308px;
   min-height: 100%;
   max-width: 308px;

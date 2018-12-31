@@ -10,8 +10,10 @@ let gulp		=	require('gulp'),
 	concat		=	require('gulp-concat'),
     uglify 		= 	require('gulp-uglify'),
 	smartgrid	=	require('smart-grid'),
-	bs 			=	require('browser-sync');
-/*----------------------------------------------------*/
+	babel       =   require('gulp-babel'),
+	bs 			=	require('browser-sync'),
+    sourcemaps  =   require('gulp-sourcemaps');
+
 let path = {
     src: {
         sass: 		'src/sass/style.sass',
@@ -28,7 +30,7 @@ let path = {
         js:    		'dist/js/',
     }
 };
-/*----------------------------------------------------*/
+
 gulp.task('dev', ['all'], () => {
 	bs.init({
         server:{
@@ -62,14 +64,14 @@ gulp.task('sass', () => {
 			.pipe(gulp.dest(path.dist.css))
 			.pipe(bs.stream());
 });
-/*----------------------------------------------------*/
+
 gulp.task('js', () => {
 	gulp.src(path.src.js)
         .pipe(concat('main.js'))
         .pipe(gulp.dest(path.dist.js))
 		.pipe(bs.stream());
 });
-/*----------------------------------------------------*/
+
 gulp.task('img', () => {
 	gulp.src(path.src.img)
 			.pipe(imagemin({
@@ -81,9 +83,9 @@ gulp.task('img', () => {
 			.pipe(gulp.dest(path.dist.img));
 });
 
-/*----------------------------------------------------*/
+
 gulp.task('all', ['sass', 'js', 'img']);
-/*----------------------------------------------------*/
+
 gulp.task('smartgrid', () => {
     smartgrid(path.src.vendor.smartgrid, {
         outputStyle: 'sass',
@@ -113,25 +115,29 @@ gulp.task('smartgrid', () => {
         }
     });
 });
-/*----------------------------------------------------*/
+
 gulp.task('production', ['img'], () => {
-	gulp.src(path.src.sass)
-			.pipe(sass({
-				outputStyle: 'expanded'
-			})).on('error', sass.logError)
-			.pipe(autoprfxr({
-				browsers: ['last 2 versions'],
-				cascade: false
-			}))
-			.pipe(gcmq())
-			.pipe(csscomb())
-			.pipe(cssmin())
-			.pipe(gulp.dest(path.dist.css))
-			.pipe(bs.stream());
+    gulp.src(path.src.sass)
+        .pipe(sass({
+            outputStyle: 'expanded'
+        })).on('error', sass.logError)
+        .pipe(autoprfxr({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gcmq())
+        .pipe(csscomb())
+        .pipe(cssmin())
+        .pipe(gulp.dest(path.dist.css))
+        .pipe(bs.stream());
 
     gulp.src(path.src.js)
+        .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(concat('main.js'))
         .pipe(uglify())
+        .pipe(sourcemaps.write('../maps'))
         .pipe(gulp.dest(path.dist.js));
 });
-/*----------------------------------------------------*/

@@ -20,3 +20,4 @@ btn.onclick = add;
 
 
 document.querySelector('.date').innerHTML = Date();
+

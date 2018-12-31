@@ -6,12 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "ya5on",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
     "browser-sync": "^2.26.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^3.10.0",
     "gulp-concat": "^2.6.1",
     "gulp-csscomb": "^3.0.8",
@@ -24,5 +27,7 @@
     "imagemin-pngquant": "^6.0.0",
     "smart-grid": "^2.1.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp-sourcemaps": "^2.6.4"
+  }
 }
