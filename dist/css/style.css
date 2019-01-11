@@ -61,7 +61,8 @@ img {
 
 body {
   overflow: hidden;
-  background-color: #000;
+  background: url(../../dist/img/main-bg.jpg) no-repeat center center;
+  background-size: cover;
   color: lightblue;
   font-family: Ubuntu;
 }
@@ -80,10 +81,17 @@ body {
   min-width: 100%;
   min-height: 100%;
   height: 100%;
-  background: url(../../dist/img/main-bg.jpg) no-repeat center center;
   background-size: cover;
   -webkit-transition: all .6s ease-in-out;
           transition: all .6s ease-in-out;
+}
+
+.content video {
+  width: 100%;
+  height: 100%;
+
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .text {
@@ -161,6 +169,8 @@ body {
 
 .btn-open-login-form:hover i {
   opacity: .8;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
 }
 
 .login-form {

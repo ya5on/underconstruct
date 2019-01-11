@@ -19,5 +19,3 @@ function add() {
 btn.onclick = add;
 
 
-document.querySelector('.date').innerHTML = Date();
-

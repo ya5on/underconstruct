@@ -38,7 +38,7 @@ gulp.task('dev', ['all'], () => {
         }
 	});
 
-	gulp.watch('src/**/*.+(sass|scss)', ['sass']);
+	gulp.watch('src/**/**/*.+(sass|scss)', ['sass']);
 	gulp.watch('src/js/**/*.js', ['js']);
 	gulp.watch('src/img/*.*', ['img']);
     gulp.watch('./**/*.html').on('change', bs.reload);
